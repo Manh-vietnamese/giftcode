@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yourdomain</groupId>
+    <groupId>dev.chanhne.giftcode</groupId>
     <artifactId>GiftCode</artifactId>
-    <version>1.4.1</version>
+    <version>1.4.2</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -20,13 +20,13 @@
         </repository>
 
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
 
         <repository>
-            <id>placeholderapi</id>
-            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+            <id>kodari</id>
+            <url>https://repo.kodari.ai/releases</url>
         </repository>
 
         <repository>
@@ -43,27 +43,19 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Source: https://mvnrepository.com/artifact/com.github.MilkBowl/VaultAPI -->
-        <dependency>
-            <groupId>com.github.MilkBowl</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.7.1</version>
-            <scope>provided</scope>
-        </dependency>
-
         <!-- Shard economy -->
         <dependency>
-            <groupId>chanhne.economy</groupId>
+            <groupId>dev.chanhne.economy</groupId>
             <artifactId>Economy-Sunflower</artifactId>
-            <version>1.3.0</version>
+            <version>1.4.2</version>
             <scope>provided</scope>
         </dependency>
 
         <!-- SignGUI -->
         <dependency>
             <groupId>de.rapha149.signgui</groupId>
-            <artifactId>signgui</artifactId>
-            <version>2.5.4</version>
+            <artifactId>SignGUI</artifactId>
+            <version>2.5.6</version>
         </dependency>
 
         <dependency>
@@ -87,7 +79,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
+                <version>3.15.0</version>
                 <configuration>
                     <release>${maven.compiler.release}</release>
                 </configuration>
@@ -96,42 +88,37 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.6.2</version>
 
                 <executions>
                     <execution>
                         <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-
+                        <goals><goal>shade</goal></goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
-                                    <excludeDefaults>false</excludeDefaults>
-                                    <includes>
-                                        <include>net/wesjd/anvilgui/**</include>
-                                    </includes>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                        <exclude>META-INF/MANIFEST.MF</exclude>
+                                        <exclude>META-INF/versions/**</exclude>
+                                    </excludes>
                                 </filter>
                             </filters>
-
-                            <artifactSet>
-                                <includes>
-                                    <include>de.rapha149.signgui:signgui</include>
-                                    <include>net.wesjd:anvilgui</include>
-                                </includes>
-                            </artifactSet>
 
                             <relocations>
                                 <relocation>
                                     <pattern>de.rapha149.signgui</pattern>
-                                    <shadedPattern>giftcodeplugin.libs.signgui</shadedPattern>
+                                    <shadedPattern>dev.chanhne.giftcode.libs.signgui</shadedPattern>
                                 </relocation>
+
                                 <relocation>
                                     <pattern>net.wesjd.anvilgui</pattern>
-                                    <shadedPattern>giftcodeplugin.libs.anvilgui</shadedPattern>
+                                    <shadedPattern>dev.chanhne.giftcode.libs.anvilgui</shadedPattern>
                                 </relocation>
                             </relocations>
 
