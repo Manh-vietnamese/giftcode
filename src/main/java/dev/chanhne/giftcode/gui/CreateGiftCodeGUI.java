@@ -1,6 +1,6 @@
 package dev.chanhne.giftcode.gui;
 
-import dev.chanhne.giftcode.Main_GiftCode;
+import dev.chanhne.giftcode.Mainplugin;
 import dev.chanhne.giftcode.builder.GiftCodeBuilder;
 import dev.chanhne.giftcode.core.NumberFomat;
 import dev.chanhne.giftcode.holder.CreateGiftCodeHolder;
@@ -19,9 +19,9 @@ import java.util.List;
 public class CreateGiftCodeGUI {
 
     private static final int SIZE = 27;
-    private final Main_GiftCode plugin;
+    private final Mainplugin plugin;
 
-    public CreateGiftCodeGUI(Main_GiftCode plugin) {
+    public CreateGiftCodeGUI(Mainplugin plugin) {
         this.plugin = plugin;
     }
 

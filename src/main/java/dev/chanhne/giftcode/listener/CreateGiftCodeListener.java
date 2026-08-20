@@ -1,6 +1,6 @@
 package dev.chanhne.giftcode.listener;
 
-import dev.chanhne.giftcode.Main_GiftCode;
+import dev.chanhne.giftcode.Mainplugin;
 import dev.chanhne.giftcode.builder.GiftCodeBuilder;
 import dev.chanhne.giftcode.config.Config_GiftCode;
 import dev.chanhne.giftcode.core.NumberFomat;
@@ -35,11 +35,11 @@ import de.rapha149.signgui.SignGUI;
 public class CreateGiftCodeListener implements Listener {
 
     private final Config_GiftCode configGiftCode;
-    private final Main_GiftCode plugin;
+    private final Mainplugin plugin;
     private final BuilderManager builderManager;
     private final ChatInputManager chatInputManager;
 
-    public CreateGiftCodeListener(Main_GiftCode plugin, Config_GiftCode configGiftCode, BuilderManager builderManager, ChatInputManager chatInputManager) {
+    public CreateGiftCodeListener(Mainplugin plugin, Config_GiftCode configGiftCode, BuilderManager builderManager, ChatInputManager chatInputManager) {
         this.plugin = plugin;
         this.configGiftCode = configGiftCode;
         this.builderManager = builderManager;

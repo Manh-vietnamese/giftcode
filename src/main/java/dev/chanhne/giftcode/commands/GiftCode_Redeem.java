@@ -8,7 +8,7 @@ import dev.chanhne.giftcode.manager.BuilderManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
-import dev.chanhne.giftcode.Main_GiftCode;
+import dev.chanhne.giftcode.Mainplugin;
 import dev.chanhne.giftcode.builder.GiftCodeBuilder;
 
 import java.util.Map;
@@ -23,11 +23,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class GiftCode_Redeem implements CommandExecutor {
 
-    private final Main_GiftCode plugin;
+    private final Mainplugin plugin;
     private final Config_GiftCode configGiftCode;
     private final BuilderManager builderManager;
 
-    public GiftCode_Redeem(Main_GiftCode plugin, Config_GiftCode configGiftCode, BuilderManager builderManager) {
+    public GiftCode_Redeem(Mainplugin plugin, Config_GiftCode configGiftCode, BuilderManager builderManager) {
         this.plugin = plugin;
         this.configGiftCode = configGiftCode;
         this.builderManager = builderManager;

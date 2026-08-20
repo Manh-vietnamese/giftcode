@@ -1,7 +1,7 @@
 package dev.chanhne.giftcode.commands;
 
 import dev.chanhne.giftcode.config.Config_GiftCode;
-import dev.chanhne.giftcode.Main_GiftCode;
+import dev.chanhne.giftcode.Mainplugin;
 import dev.chanhne.giftcode.core.GiftCode;
 
 import org.bukkit.Bukkit;
@@ -17,10 +17,10 @@ import java.util.UUID;
 
 public class GiftCode_Admin implements CommandExecutor {
 
-    private final Main_GiftCode plugin;
+    private final Mainplugin plugin;
     private final Config_GiftCode configGiftCode;
 
-    public GiftCode_Admin(Main_GiftCode plugin, Config_GiftCode configGiftCode) {
+    public GiftCode_Admin(Mainplugin plugin, Config_GiftCode configGiftCode) {
         this.plugin = plugin;
         this.configGiftCode = configGiftCode;
     }

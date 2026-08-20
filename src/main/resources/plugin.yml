@@ -1,6 +1,6 @@
 name: GiftCode
 version: ${project.version}
-main: dev.chanhne.giftcode.Main_GiftCode
+main: dev.chanhne.giftcode.Mainplugin
 folia-supported: true
 api-version: '1.21'
 author: Chanhne

@@ -18,7 +18,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.util.Objects;
 
-public class Main_GiftCode extends JavaPlugin {
+public class Mainplugin extends JavaPlugin {
 
     private Messager messageManager;
     private EconomyProvider shardProvider;
